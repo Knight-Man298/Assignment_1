@@ -8,5 +8,9 @@ namespace Assignment_1
 {
     internal class Vacumm : Appliance
     {
+        public Vacumm() 
+        {
+
+        }
     }
 }

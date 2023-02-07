@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Assignment_1
 {
-    internal class Dishwasher : Appliance
+    internal class Fridge : Appliance
     {
-        public Dishwasher() 
-        { 
+        public Fridge()
+        {
 
         }
     }

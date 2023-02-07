@@ -8,5 +8,9 @@ namespace Assignment_1
 {
     internal class Microwave : Appliance
     {
+        public Microwave()
+        {
+
+        }
     }
 }

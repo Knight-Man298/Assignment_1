@@ -8,6 +8,9 @@ namespace Assignment_1
 {
     internal class Appliance
     {
+        public Appliance()
+        {
 
+        }
     }
 }
