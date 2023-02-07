@@ -17,7 +17,7 @@ namespace Assignment_1
         private double capacity;
         private string roomType;
 
-        public string Id { get => id; set => id = value; }
+        public string ID { get => id; set => id = value; }
         public string Brand { get => brand; set => brand = value; }
         public double Quantity { get => quantity; set => quantity = value; }
         public double Wattage { get => wattage; set => wattage = value; }
@@ -28,7 +28,7 @@ namespace Assignment_1
 
         public Appliance(string id, string brand, double quantity, double wattage, string color, double price, double capacity, string roomType)
         {
-            Id = id;
+            ID = id;
             Brand = brand;
             Quantity = quantity;
             Wattage = wattage;
@@ -38,7 +38,19 @@ namespace Assignment_1
             RoomType = roomType;
         }
 
-
+        public static string ToString()
+        {
+            return $"""
+                ID:
+                Brand:
+                Quantity:
+                Wattage: 
+                Color:
+                Price: $
+                Capacity:
+                Room Type:
+                """;
+        }
 
 
     }
