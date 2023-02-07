@@ -29,7 +29,7 @@ namespace Assignment_1
 
         }
 
-        public Appliance(string id, string brand, double quantity, double wattage, string color, double price, double capacity)
+        public Appliance(double capacity)
         {
             this.ID = id;
             this.Brand = brand;
