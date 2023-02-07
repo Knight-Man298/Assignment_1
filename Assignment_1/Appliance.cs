@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_1
 {
-    internal class Appliance
+    public class Appliance
     {
         private string id;
         private string brand;
@@ -26,16 +26,21 @@ namespace Assignment_1
         public double Capacity { get => capacity; set => capacity = value; }
         public string RoomType { get => roomType; set => roomType = value; }
 
+        public Appliance()
+        {
+
+        }
+
         public Appliance(string id, string brand, double quantity, double wattage, string color, double price, double capacity, string roomType)
         {
-            Id = id;
-            Brand = brand;
-            Quantity = quantity;
-            Wattage = wattage;
-            Color = color;
-            Price = price;
-            Capacity = capacity;
-            RoomType = roomType;
+            this.Id = id;
+            this.Brand = brand;
+            this.Quantity = quantity;
+            this.Wattage = wattage;
+            this.Color = color;
+            this.Price = price;
+            this.Capacity = capacity;
+            this.RoomType = roomType;
         }
 
 
