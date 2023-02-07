@@ -15,7 +15,6 @@ namespace Assignment_1
         private string color;
         private double price;
         private double capacity;
-        private string roomType;
 
         public string ID { get => id; set => id = value; }
         public string Brand { get => brand; set => brand = value; }
@@ -24,23 +23,21 @@ namespace Assignment_1
         public string Color { get => color; set => color = value; }
         public double Price { get => price; set => price = value; }
         public double Capacity { get => capacity; set => capacity = value; }
-        public string RoomType { get => roomType; set => roomType = value; }
 
         public Appliance()
         {
 
         }
 
-        public Appliance(string id, string brand, double quantity, double wattage, string color, double price, double capacity, string roomType)
+        public Appliance(string id, string brand, double quantity, double wattage, string color, double price, double capacity)
         {
-            this.Id = id;
+            this.ID = id;
             this.Brand = brand;
             this.Quantity = quantity;
             this.Wattage = wattage;
             this.Color = color;
             this.Price = price;
             this.Capacity = capacity;
-            this.RoomType = roomType;
         }
 
         public static string ToString()
