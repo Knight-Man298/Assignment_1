@@ -29,7 +29,7 @@ namespace Assignment_1
 
         }
 
-        public Appliance(double capacity)
+        public Appliance(string id, string brand, double quantity, double wattage, string color, double price)
         {
             this.ID = id;
             this.Brand = brand;
@@ -37,22 +37,21 @@ namespace Assignment_1
             this.Wattage = wattage;
             this.Color = color;
             this.Price = price;
-            this.Capacity = capacity;
         }
 
-        public static string ToString()
+        public string ToString()
         {
             return $"""
-                ID:
-                Brand:
-                Quantity:
-                Wattage: 
-                Color:
-                Price: $
-                Capacity:
-                Room Type:
+                ID: {ID}
+                Brand: {Brand}
+                Quantity: {Quantity}
+                Wattage: {Wattage}
+                Color: {Color}
+                Price: ${Price}
                 """;
         }
+
+        
 
 
     }
