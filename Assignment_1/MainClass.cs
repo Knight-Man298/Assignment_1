@@ -1,15 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment_1
 {
     internal class MainClass
     {
+
         static List<Appliance> appliances = new List<Appliance>();
+
+        public static void CheckoutAppliance(long input)
+        {
+
+            foreach (Appliance x in appliances)
+            {
+                if (x.ItemNumber == input)
+                {
+                    if (x.Quantity > 0)
+                    {
+                        Console.WriteLine("Appliance " + input + " has been checked out ");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("The appliance is not available to be checked out");
+                    }
+                }
+
+                else
+                {
+                    Console.WriteLine("No appliance found with that item number");
+                }
+            }
+
+
+        }
         public static void AddAppliances()
         {
 
@@ -100,7 +130,8 @@ namespace Assignment_1
                 if (input == "1")
                 {
                     Console.WriteLine("Enter item number of Appliance:");
-                    string itemNumber = Console.ReadLine();
+                    long itemNumber = long.Parse(Console.ReadLine());
+
                 }
                 else if (input == "2")
                 {
