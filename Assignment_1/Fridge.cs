@@ -19,7 +19,7 @@ namespace Assignment_1
         public Fridge()
         {
         }
-        public Fridge(string id, string brand, double quantity, double wattage, string color, double price, double capacity, string roomType, double height , double width , double numberOfDoors) : base(id, brand, quantity, wattage, color, price, capacity, roomType)
+        public Fridge(long itemNumber, string brand, double quantity, double wattage, string color, double price, double height , double width , double numberOfDoors) : base(itemNumber, brand, quantity, wattage, color, price)
         {
             this.Height = height;
             this.Width = width;
