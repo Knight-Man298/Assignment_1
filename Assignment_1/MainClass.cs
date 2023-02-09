@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment_1
@@ -16,28 +14,34 @@ namespace Assignment_1
 
         static List<Appliance> appliances = new List<Appliance>();
 
-        public static string CheckoutAppliance(string input)
+        public string CheckoutAppliance(long input)
+
         {
-            foreach (Appliance appliance in appliances)
+            string output;
+
+            foreach (Appliance x in appliances)
             {
-                if (appliance.ItemNumber == long.Parse(input))
+                if (x.ItemNumber == input)
                 {
-                    if (appliance.Quantity > 0)
+                    if (x.Quantity > 0)
                     {
-                        return "Appliance " + input + " has been checked out ";
+                        output = "Appliance " + input + " has been checked out ";
                     }
 
                     else
                     {
-                        return "The appliance is not available to be checked out";
+                        output = "The appliance is not available to be checked out";
                     }
                 }
+
                 else
                 {
-                    return "No appliance found with that item number";
-                }              
+                    output = "No appliance found with that item number";
+                }
             }
-            return string.Empty;
+            return output;
+
+
         }
         public static void AddAppliances()
         {
@@ -130,7 +134,7 @@ namespace Assignment_1
                 {
                     Console.WriteLine("Enter item number of Appliance:");
                     long itemNumber = long.Parse(Console.ReadLine());
-                    Console.WriteLine(CheckoutAppliance(itemNumber.ToString()));
+                    Console.WriteLine(CheckoutAppliance((itemNumber));
 
                 }
                 else if (input == "2")
