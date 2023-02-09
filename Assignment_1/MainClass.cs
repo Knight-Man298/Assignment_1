@@ -20,10 +20,12 @@ namespace Assignment_1
                 string identification = position[0];
                 char firstChar = identification[0];
 
-                if (firstChar == '1' || firstChar == '2' || firstChar == '3' || firstChar == '4')
+                if (firstChar == '1')
                 {
-
-                }
+                    Fridge fridge = new Fridge();
+                    fridge.ItemNumber = long.Parse(position[0]);
+                    fridge.Brand = position[1];
+;                }
             }
         }
 
