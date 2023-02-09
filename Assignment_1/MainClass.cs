@@ -25,7 +25,41 @@ namespace Assignment_1
                     Fridge fridge = new Fridge();
                     fridge.ItemNumber = long.Parse(position[0]);
                     fridge.Brand = position[1];
+                    fridge.Quantity = double.Parse(position[2]);
+                    fridge.Wattage = double.Parse(position[3]);
+                    fridge.Color = position[4];
+                    fridge.Price = double.Parse(position[5]);
+                    fridge.NumberOfDoors = double.Parse(position[6]);
+                    fridge.Height = double.Parse(position[7]);
+                    fridge.Width = double.Parse(position[8]);
+
+                    appliances.Add(fridge);
 ;                }
+                else if (firstChar == '2')
+                {
+                    Vacumm vacumm = new Vacumm();
+                    vacumm.ItemNumber = long.Parse(position[0]);
+                    vacumm.Brand = position[1];
+                    vacumm.Quantity = double.Parse(position[2]);
+                    vacumm.Wattage = double.Parse(position[3]);
+                    vacumm.Color = position[4];
+                    vacumm.Price = double.Parse(position[5]);
+                    vacumm.Grade = position[6];
+                    vacumm.BatteryVoltage = double.Parse(position[7]);
+
+                    appliances.Add(vacumm);
+                }
+                else if (firstChar == '3')
+                {
+                    Microwave microwave= new Microwave();
+                    microwave.ItemNumber= long.Parse(position[0]);
+                    microwave.Brand = position[1];
+                    microwave.Quantity = double.Parse(position[2]);
+                    microwave.Wattage = double.Parse(position[3]);
+                    microwave.Color = position[4];
+                    microwave.Price = double.Parse(position[5]);
+
+                }
             }
         }
 
@@ -72,8 +106,6 @@ namespace Assignment_1
                 {
                     Console.WriteLine("Enter brand to search for:");
                     string brand = Console.ReadLine();
-                    /* create a ToString() method that
-                     * prints all the information */
                 }
                 else if (input == "3")
                 {
