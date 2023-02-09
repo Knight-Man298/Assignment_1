@@ -38,5 +38,5 @@ namespace Assignment_1
                 Capacity: {Capacity}
                 Room Type: {RoomType}
                 """;
-        }
+        }    }
 }
