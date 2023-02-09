@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_1
 {
-    internal class Vacumm : Appliance
+    public class Vacumm : Appliance
     {
         private string grade;
         private double batteryVoltage;
@@ -19,16 +19,19 @@ namespace Assignment_1
 
         }
 
-        public Vacumm(string id, string brand, double quantity, double wattage, string color, double price, string grade, double batteryVoltage)
+        public Vacumm(long itemNumber, string brand, double quantity, double wattage, string color, double price, string grade, double batteryVoltage)
         {
             this.Grade = grade;
             this.BatteryVoltage = batteryVoltage;
         }
 
+                
+      
+
         public override string ToString()
         {
             return $"""
-                ID: {ID}
+                Item Number: {ItemNumber}
                 Brand: {Brand}
                 Quantity: {Quantity}
                 Wattage: {Wattage}
