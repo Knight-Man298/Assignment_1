@@ -8,7 +8,7 @@ namespace Assignment_1
 {
     public class Appliance
     {
-        private string id;
+        private long itemNumber;
         private string brand;
         private double quantity;
         private double wattage;
@@ -16,7 +16,7 @@ namespace Assignment_1
         private double price;
         private double capacity;
 
-        public string ID { get => id; set => id = value; }
+        public long ItemNumber { get => itemNumber; set => itemNumber = value; }
         public string Brand { get => brand; set => brand = value; }
         public double Quantity { get => quantity; set => quantity = value; }
         public double Wattage { get => wattage; set => wattage = value; }
@@ -29,9 +29,9 @@ namespace Assignment_1
 
         }
 
-        public Appliance(string id, string brand, double quantity, double wattage, string color, double price)
+        public Appliance(long id, string brand, double quantity, double wattage, string color, double price)
         {
-            this.ID = id;
+            this.ItemNumber = itemNumber;
             this.Brand = brand;
             this.Quantity = quantity;
             this.Wattage = wattage;
@@ -42,7 +42,7 @@ namespace Assignment_1
         public virtual string ToString()
         {
             return $"""
-                ID: {ID}
+                ID: {ItemNumber}
                 Brand: {Brand}
                 Quantity: {Quantity}
                 Wattage: {Wattage}
@@ -63,7 +63,7 @@ namespace Assignment_1
 
         public string FormatForFile()
         {
-            return string.Empty;
+            return $"";
         }
 
 
