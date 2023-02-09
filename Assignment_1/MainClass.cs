@@ -75,22 +75,40 @@ namespace Assignment_1
                 }
                 else if (input == "3")
                 {
-                    Console.WriteLine("""
-                        Appliance Types
-                        1 – Refrigerators
-                        2 – Vacuums
-                        3 – Microwaves
-                        4 – Dishwashers
+                    while (true) {
+                        Console.WriteLine("""
+                            Appliance Types
+                            1 – Refrigerators
+                            2 – Vacuums
+                            3 – Microwaves
+                            4 – Dishwashers
                         
-                        Enter type of appliance:
-                        """);
-                    string type = Console.ReadLine();
+                            Enter type of appliance:
+                            """);
+                        string type = Console.ReadLine();
 
-                    if (type == "1")
-                    {
-                        Console.WriteLine("Enter number of doors: 2 (double door), 3 (three doors) or 4 (four doors):");
-                        int doors = int.Parse(Console.ReadLine());
-                        Doors(doors); 
+                        if (type == "1")
+                        {
+                            Console.WriteLine("Enter number of doors: 2 (double door), 3 (three doors) or 4 (four doors):");
+                            int doors = int.Parse(Console.ReadLine());
+                            Doors(doors);
+                        }
+                        else if (type == "2")
+                        {
+
+                        }
+                        else if (type == "3")
+                        {
+
+                        }
+                        else if (type == "4")
+                        {
+
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
 
                 }

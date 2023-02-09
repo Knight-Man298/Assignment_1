@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,14 +23,13 @@ namespace Assignment_1
         public double Wattage { get => wattage; set => wattage = value; }
         public string Color { get => color; set => color = value; }
         public double Price { get => price; set => price = value; }
-        public double Capacity { get => capacity; set => capacity = value; }
 
         public Appliance()
         {
 
         }
 
-        public Appliance(long id, string brand, double quantity, double wattage, string color, double price)
+        public Appliance(long itemNumber, string brand, double quantity, double wattage, string color, double price)
         {
             this.ItemNumber = itemNumber;
             this.Brand = brand;
@@ -51,9 +51,17 @@ namespace Assignment_1
                 """;
         }
 
-        public bool IsAvailable()
+        public bool IsAvailable(bool itemAttribute)
         {
-            return true;
+            if (itemAttribute == false) 
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
         }
 
         public string CheckOut()
@@ -63,7 +71,7 @@ namespace Assignment_1
 
         public string FormatForFile()
         {
-            return $"";
+            return $"{ItemNumber};{Brand};{Quantity};{Wattage};{Color};{Price}";
         }
 
 
