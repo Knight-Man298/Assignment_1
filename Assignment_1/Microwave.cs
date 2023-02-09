@@ -39,4 +39,5 @@ namespace Assignment_1
                 Room Type: {RoomType}
                 """;
         }
+    }
 }
