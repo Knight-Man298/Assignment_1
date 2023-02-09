@@ -39,7 +39,7 @@ namespace Assignment_1
             this.Price = price;
         }
 
-        public string ToString()
+        public virtual string ToString()
         {
             return $"""
                 ID: {ID}

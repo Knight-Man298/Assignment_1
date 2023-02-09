@@ -24,5 +24,21 @@ namespace Assignment_1
             this.grade = grade;
             this.batteryVoltage = batteryVoltage;
         }
+
+        public override string ToString()
+        {
+            return $"""
+                ID: {ID}
+                Brand: {Brand}
+                Quantity: {Quantity}
+                Wattage: {Wattage}
+                Color: {Color}
+                Price: {Price}
+                Grade: {Grade}
+                Battery {BatteryVoltage}
+                """;
+        }
+
+
     }
 }
