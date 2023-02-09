@@ -41,6 +41,8 @@ namespace Assignment_1
             }
             return output;
 
+            //i hate this 
+
 
         }
         public static void AddAppliances()
