@@ -10,7 +10,7 @@ namespace Assignment_1
     {
         public Microwave()
         {
-
+            
         }
     }
 }

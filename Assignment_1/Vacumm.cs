@@ -21,8 +21,8 @@ namespace Assignment_1
 
         public Vacumm(string id, string brand, double quantity, double wattage, string color, double price, string grade, double batteryVoltage)
         {
-            this.grade = grade;
-            this.batteryVoltage = batteryVoltage;
+            this.Grade = grade;
+            this.BatteryVoltage = batteryVoltage;
         }
 
         public override string ToString()

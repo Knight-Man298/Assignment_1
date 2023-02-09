@@ -51,7 +51,20 @@ namespace Assignment_1
                 """;
         }
 
-        
+        public bool IsAvailable()
+        {
+            return true;
+        }
+
+        public string CheckOut()
+        {
+            return string.Empty;
+        }
+
+        public string FormatForFile()
+        {
+            return string.Empty;
+        }
 
 
     }
