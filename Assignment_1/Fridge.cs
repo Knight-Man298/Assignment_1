@@ -21,14 +21,24 @@ namespace Assignment_1
         }
         public Fridge(string id, string brand, double quantity, double wattage, string color, double price, double capacity, string roomType, double height , double width , double numberOfDoors) : base(id, brand, quantity, wattage, color, price, capacity, roomType)
         {
-            this.height = height;
-            this.width = width;
-            this.numberOfDoors = numberOfDoors;
+            this.Height = height;
+            this.Width = width;
+            this.NumberOfDoors = numberOfDoors;
         }
 
         public override string ToString()
         {
-            return "hello";
+            return $"""
+                ID: {ItemNumber}
+                Brand: {Brand}
+                Quantity: {Quantity}
+                Wattage: {Wattage}
+                Color: {Color}
+                Price: ${Price}
+                Height: {Height}
+                Width: {Width}
+                Number Of Doors: {NumberOfDoors}
+                """;
         }
     }
 }
