@@ -27,7 +27,7 @@ namespace Assignment_1
                     output = $"Appliance {input} has been checked out.";
                     return output;
                 }
-                else if (appliance.ItemNumber == 0)
+                else if (appliance.Quantity == 0)
                 {
                     output = "The appliance is not available to be checked out.";
                 }
@@ -35,6 +35,24 @@ namespace Assignment_1
                 {
                     output = "No appliances found with that item number.";
                     return output;
+                }
+            }
+            return output;
+        }
+        public static string SearchBrandByName(string input)
+        {
+            string output = "";
+            foreach (Appliance appliance in appliances)
+            {
+                if (appliance.Brand == input)
+                {
+                    output = "Matching Appliances:" + appliance.ToString() + "";
+                    return output;
+                }
+
+                else
+                {
+                    output = "No appliance by that " + input + "";
                 }
             }
             return output;
@@ -141,6 +159,8 @@ namespace Assignment_1
                 {
                     Console.WriteLine("Enter brand to search for:");
                     string brand = Console.ReadLine();
+                    Console.WriteLine(SearchBrandByName(brand));
+                    
                 }
                 else if (input == "3")
                 {
