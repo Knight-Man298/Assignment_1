@@ -18,22 +18,26 @@ namespace Assignment_1
 
         public static string CheckoutAppliance(long input)
         {
-            string test = "test";
+            string output = "";
             foreach (Appliance appliance in appliances)
             {
 
                 if (appliance.ItemNumber == input)
                 {
-                    test = "test 1";
-                    return test;
+                    output = $"Appliance {input} has been checked out.";
+                    return output;
+                }
+                else if (appliance.ItemNumber == 0)
+                {
+                    output = "The appliance is not available to be checked out.";
                 }
                 else
                 {
-                    test = "test 1";
-                    return test;
+                    output = "No appliances found with that item number.";
+                    return output;
                 }
             }
-            return test;
+            return output;
         }
         public static void AddAppliances()
         {
