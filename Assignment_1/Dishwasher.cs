@@ -8,21 +8,42 @@ namespace Assignment_1
 {
     public class Dishwasher : Appliance
     {
-        private string soundrating;
         private string feature;
+        private string soundrating;
+     
 
-        public string Soundrating { get => soundrating; set => soundrating = value; }
         public string Feature { get => feature; set => feature = value; }
+        public string Soundrating { get => soundrating; set => soundrating = value; }
 
         public Dishwasher()
         {
 
         }
 
-        public Dishwasher(long itemNumber, string brand, double quantity, double wattage, string color, double price, string soundrating, string feature) : base(itemNumber, brand, quantity, wattage, color, price)
+        public Dishwasher(long itemNumber, string brand, double quantity, double wattage, string color, double price,string feature, string soundrating) : base(itemNumber, brand, quantity, wattage, color, price)
         {
             this.Soundrating = soundrating;
             this.Feature = feature;
+        }
+
+        public string getSoundRating(string inputSoundRating)
+        {
+            if( inputSoundRating == "QT")
+            {
+                return "Quietest";
+            }
+            else if ( inputSoundRating == "QR")
+            {
+                return "Quieter";
+            }
+            else if (inputSoundRating == "QU")
+            {
+                return "Quiet";
+            }
+            else if (inputSoundRating == "M")
+            {
+                return "Moderate";
+            }
         }
 
         public override string ToString()
@@ -34,8 +55,8 @@ namespace Assignment_1
                 Wattage: {Wattage}
                 Color: {Color}
                 Price: ${Price}
-                SoundRating: {Soundrating}
                 Feture: {Feature}
+                SoundRating: {getSoundRating(Soundrating)}                
                 """;
         }
     }

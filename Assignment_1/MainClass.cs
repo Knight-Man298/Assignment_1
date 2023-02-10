@@ -120,8 +120,9 @@ namespace Assignment_1
                         dishwasher.Wattage = double.Parse(position[3]);
                         dishwasher.Color = position[4];
                         dishwasher.Price = double.Parse(position[5]);
-                        dishwasher.Soundrating = position[6];
-                        dishwasher.Feature = position[7];
+                        dishwasher.Feature = position[6];
+                        dishwasher.Soundrating = position[7];
+                        
 
                         appliances.Add(dishwasher);
                         break;
