@@ -39,7 +39,7 @@ namespace Assignment_1
             }
             return output;
         }
-        public static void SearchBrandByName(string input)
+        public static string SearchBrandByName(string input)
         {
             string output = "";
             foreach (Appliance appliance in appliances)
@@ -54,8 +54,9 @@ namespace Assignment_1
                 {
                     output = $"No appliance by that {input}";
                 }
+                
             }
-            Console.WriteLine(output);
+                return output;
         }
         public static void AddAppliances()
         {
