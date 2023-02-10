@@ -25,8 +25,24 @@ namespace Assignment_1
             this.BatteryVoltage = batteryVoltage;
         }
 
-                
-      
+        public string getVoltage(double voltageInput)
+        {
+            if (batteryVoltage == 14)
+            {
+                return "Low";
+            }
+            else if (batteryVoltage == 24)
+            {
+                return "High";
+            }
+            else
+            {
+                return  "Not availible";
+            }
+
+            
+        }
+       
 
         public override string ToString()
         {
@@ -38,7 +54,7 @@ namespace Assignment_1
                 Color: {Color}
                 Price: {Price}
                 Grade: {Grade}
-                Battery {BatteryVoltage}
+                Battery voltage: {getVoltage(batteryVoltage)}
                 """;
         }
 

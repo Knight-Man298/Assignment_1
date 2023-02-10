@@ -26,6 +26,20 @@ namespace Assignment_1
             this.roomType = roomType;
         }
 
+        public string getRoomType(string inputroomtype)
+        {
+            if (inputroomtype == "W")
+            {
+                return "Work site";
+            }
+            else if (inputroomtype == "K")
+            {
+                return "Kitchen";
+            }
+            else
+                return "Not availble";
+        }
+
         public override string ToString()
         {
             return $"""
