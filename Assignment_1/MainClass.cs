@@ -88,6 +88,7 @@ namespace Assignment_1
                         break;
                 }
             }
+           
         }
 
         public static int Doors(int input)
@@ -108,6 +109,7 @@ namespace Assignment_1
 
         public static void Main()
         {
+            AddAppliances();
             while (true)
             {
                 Console.WriteLine("Welcome to Modern Appliances!");
@@ -129,7 +131,7 @@ namespace Assignment_1
                     Console.WriteLine("Enter item number of Appliance:");
                     long itemNumber = long.Parse(Console.ReadLine());
                     Console.WriteLine(CheckoutAppliance (itemNumber));
-
+                    
                 }
                 else if (input == "2")
                 {
