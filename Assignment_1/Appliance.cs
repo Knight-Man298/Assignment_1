@@ -42,7 +42,7 @@ namespace Assignment_1
         public virtual string ToString()
         {
             return $"""
-                ID: {ItemNumber}
+                Item Number: {ItemNumber}
                 Brand: {Brand}
                 Quantity: {Quantity}
                 Wattage: {Wattage}
