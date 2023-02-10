@@ -26,6 +26,26 @@ namespace Assignment_1
             this.NumberOfDoors = numberOfDoors;
         }
 
+        public string getNumberOfDoors(double inputnumberofdoors)
+        {
+            if (inputnumberofdoors == 2)
+            {
+                return "Two Doors";
+            }
+            else if (inputnumberofdoors == 3)
+            {
+                return "Three Doors";
+            }
+            else if (inputnumberofdoors == 4)
+            {
+                return "Four Doors";
+            }
+            else
+            {
+                return "Not avaliable";
+            }
+        }
+
         public override string ToString()
         {
             return $"""
@@ -37,7 +57,7 @@ namespace Assignment_1
                 Price: ${Price}
                 Height: {Height}
                 Width: {Width}
-                Number Of Doors: {NumberOfDoors}
+                Number Of Doors: {getNumberOfDoors(NumberOfDoors)}
                 """;
         }
     }
