@@ -21,7 +21,7 @@ namespace Assignment_1
             string output = "";
             foreach (Appliance appliance in appliances)
             {
-
+                
                 if (appliance.ItemNumber == input)
                 {
                     output = $"Appliance {input} has been checked out.";
@@ -40,24 +40,23 @@ namespace Assignment_1
             return output;
         }
         public static string SearchBrandByName(string input)
-        {
+        { // ONLY PRINTS LAST INSTANCE, NEEDS TO PRINT ALL INSTANCES
             string output = "";
             foreach (Appliance appliance in appliances)
             {
-
                 if (appliance.Brand == input)
                 {
-                    output = $"Matching Appliances: { appliance.ToString()}";
+                    output = "No appliances found with that item number.";
+                    output = $"Matching Appliances: {appliance.ToString()}";
                 }
-
                 else
                 {
-                    output = $"No appliance by that {input}";
+                    output = "No appliances found with that item number.";
                 }
-                
             }
-                return output;
+            return output;
         }
+
         public static void AddAppliances()
         {
 
@@ -110,6 +109,8 @@ namespace Assignment_1
                         microwave.Price = double.Parse(position[5]);
                         microwave.Capacity = double.Parse(position[6]);
                         microwave.RoomType = position[7];
+
+                        appliances.Add(microwave);
                         break;
                     case '4': case '5':
                         Dishwasher dishwasher = new Dishwasher();
@@ -121,6 +122,8 @@ namespace Assignment_1
                         dishwasher.Price = double.Parse(position[5]);
                         dishwasher.Soundrating = position[6];
                         dishwasher.Feature = position[7];
+
+                        appliances.Add(dishwasher);
                         break;
                 }
             }
