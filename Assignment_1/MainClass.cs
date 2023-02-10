@@ -66,6 +66,21 @@ namespace Assignment_1
             }
                         
         }
+        public static void DisplayApplianceByType(double input)
+        {
+            string output = "";
+            foreach(Appliance appliance in appliances)
+            {
+                if (appliance is Fridge)
+                {
+                    if (((Fridge)appliance).NumberOfDoors == input)
+                    {
+                        Console.WriteLine(appliance.ToString);
+                    }
+                }
+
+            }
+        }
 
         public static void AddAppliances()
         {
@@ -208,7 +223,7 @@ namespace Assignment_1
                         {
                             Console.WriteLine("Enter number of doors: 2 (double door), 3 (three doors) or 4 (four doors):");
                             int doors = int.Parse(Console.ReadLine());
-                            Doors(doors);
+                           
                         }
                         else if (type == "2")
                         {
