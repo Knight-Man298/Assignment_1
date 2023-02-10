@@ -38,10 +38,6 @@ namespace Assignment_1
                 Capacity: {Capacity}
                 Room Type: {RoomType}
                 """;
-<<<<<<< HEAD
-        }    }
-=======
         }
     }
->>>>>>> 2259f3bd223db1fc40ea8fdd2dcfe81e81fc5a85
 }

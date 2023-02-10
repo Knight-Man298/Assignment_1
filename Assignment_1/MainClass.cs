@@ -14,37 +14,31 @@ namespace Assignment_1
 
         static List<Appliance> appliances = new List<Appliance>();
 
-        public string CheckoutAppliance(long input)
-
+        public static string CheckoutAppliance(long input)
         {
-            string output;
-
+            string output = "test";
             foreach (Appliance x in appliances)
             {
                 if (x.ItemNumber == input)
                 {
+
                     if (x.Quantity > 0)
                     {
-                        output = "Appliance " + input + " has been checked out ";
+                        output.Replace("test", "Appliance " + input + " has been checked out.");
                     }
 
                     else
                     {
-                        output = "The appliance is not available to be checked out";
+                        output.Replace("test", "The appliance is not available to be checked out.");
                     }
                 }
 
                 else
                 {
-                    output = "No appliance found with that item number";
+                    output.Replace("test", "No appliance found with that item number.");
                 }
             }
             return output;
-
-            //i hate this
-            //bruh
-
-
         }
         public static void AddAppliances()
         {
@@ -96,6 +90,7 @@ namespace Assignment_1
                     microwave.Price = double.Parse(position[5]);
 
                 }
+                Console.WriteLine(appliances);
             }
         }
 
@@ -137,7 +132,7 @@ namespace Assignment_1
                 {
                     Console.WriteLine("Enter item number of Appliance:");
                     long itemNumber = long.Parse(Console.ReadLine());
-                    Console.WriteLine(CheckoutAppliance((itemNumber));
+                    Console.WriteLine(CheckoutAppliance(itemNumber));
 
                 }
                 else if (input == "2")
