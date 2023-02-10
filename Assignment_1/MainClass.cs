@@ -39,23 +39,23 @@ namespace Assignment_1
             }
             return output;
         }
-        public static string SearchBrandByName(string input)
+        public static void SearchBrandByName(string input)
         {
             string output = "";
             foreach (Appliance appliance in appliances)
             {
+
                 if (appliance.Brand == input)
                 {
-                    output = "Matching Appliances:" + appliance.ToString() + "";
-                    return output;
+                    output = $"Matching Appliances: { appliance.ToString()}";
                 }
 
                 else
                 {
-                    output = "No appliance by that " + input + "";
+                    output = $"No appliance by that {input}";
                 }
             }
-            return output;
+            Console.WriteLine(output);
         }
         public static void AddAppliances()
         {
@@ -107,6 +107,19 @@ namespace Assignment_1
                         microwave.Wattage = double.Parse(position[3]);
                         microwave.Color = position[4];
                         microwave.Price = double.Parse(position[5]);
+                        microwave.Capacity = double.Parse(position[6]);
+                        microwave.RoomType = position[7];
+                        break;
+                    case '4': case '5':
+                        Dishwasher dishwasher = new Dishwasher();
+                        dishwasher.ItemNumber= long.Parse(position[0]);
+                        dishwasher.Brand = position[1];
+                        dishwasher.Quantity = double.Parse(position[2]);
+                        dishwasher.Wattage = double.Parse(position[3]);
+                        dishwasher.Color = position[4];
+                        dishwasher.Price = double.Parse(position[5]);
+                        dishwasher.Soundrating = position[6];
+                        dishwasher.Feature = position[7];
                         break;
                 }
             }
@@ -152,7 +165,7 @@ namespace Assignment_1
                 {
                     Console.WriteLine("Enter item number of Appliance:");
                     long itemNumber = long.Parse(Console.ReadLine());
-                    Console.WriteLine(CheckoutAppliance (itemNumber));
+                    Console.WriteLine(CheckoutAppliance(itemNumber));
                     
                 }
                 else if (input == "2")

@@ -27,7 +27,7 @@ namespace Assignment_1
 
         public string getVoltage(double voltageInput)
         {
-            if (batteryVoltage == 14)
+            if (batteryVoltage == 18)
             {
                 return "Low";
             }
@@ -54,7 +54,7 @@ namespace Assignment_1
                 Color: {Color}
                 Price: {Price}
                 Grade: {Grade}
-                Battery voltage: {getVoltage(batteryVoltage)}
+                Battery Voltage: {getVoltage(BatteryVoltage)}
                 """;
         }
 

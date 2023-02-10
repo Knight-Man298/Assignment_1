@@ -50,7 +50,7 @@ namespace Assignment_1
                 Color: {Color}
                 Price: {Price}
                 Capacity: {Capacity}
-                Room Type: {RoomType}
+                Room Type: {getRoomType(RoomType)}
                 """;
         }
     }
