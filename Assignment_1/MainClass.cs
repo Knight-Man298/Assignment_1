@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Math;
 
 namespace Assignment_1
 {
@@ -24,16 +25,16 @@ namespace Assignment_1
                 
                 if (appliance.ItemNumber == input)
                 {
-                    output = $"Appliance {input} has been checked out.";
+                    output = $"Appliance {input} has been checked out. \n";
                     return output;
                 }
                 else if (appliance.Quantity == 0)
                 {
-                    output = "The appliance is not available to be checked out.";
+                    output = "The appliance is not available to be checked out. \n";
                 }
                 else
                 {
-                    output = "No appliances found with that item number.";
+                    output = "No appliances found with that item number. \n";
                     return output;
                 }
             }
@@ -42,25 +43,26 @@ namespace Assignment_1
         public static void SearchBrandByName(string input)
         { // ONLY PRINTS LAST INSTANCE, NEEDS TO PRINT ALL INSTANCES
             List<Appliance> CalledAppliances = new List <Appliance>();
-            string output = "No appliances found with that item number.";
+            string output = "";
             foreach (Appliance appliance in appliances)
             {
                 if (appliance.Brand == input)
                 {
                     CalledAppliances.Add(appliance);
-                    output = $"Matching Appliances: ";
+                    output = $"Matching Appliances: \n";
                 continue;
                     
                 }
                 else
                 {
+                    output = "No appliances found with that item number. \n";
                     continue;
                 }
             }
             Console.WriteLine(output);
             foreach(Appliance x in CalledAppliances)
             {
-                Console.WriteLine(x.ToString);
+                Console.WriteLine(x.ToString());
             }
                         
         }
@@ -176,7 +178,7 @@ namespace Assignment_1
 
                 if (input == "1")
                 {
-                    Console.WriteLine("Enter item number of Appliance:");
+                    Console.WriteLine("\nEnter item number of Appliance:\n");
                     long itemNumber = long.Parse(Console.ReadLine());
                     Console.WriteLine(CheckoutAppliance(itemNumber));
                     
@@ -231,10 +233,8 @@ namespace Assignment_1
                 {
                     Console.WriteLine("Enter number of appliances:");
                     int numberOfAppliances = int.Parse(Console.ReadLine());
-                    for (int index = 0; index < numberOfAppliances; index++)
-                    { 
-                       // print random appliances depending on the number entered
-                    }
+
+           
                 }
                 else
                 {
