@@ -48,8 +48,11 @@ namespace Assignment_1
                 if (appliance.Brand == input)
                 {
                     CalledAppliances.Add(appliance);
-                    output = $"Matching Appliances: {CalledAppliances.ToString()}";
-                    continue;
+                    for (int index = 0; index < CalledAppliances.Count; index++)
+                    {
+                        output = $"Matching Appliances: {CalledAppliances.ToString()}";
+                        continue;
+                    }
                 }
                 else
                 {
