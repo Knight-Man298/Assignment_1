@@ -16,7 +16,7 @@ namespace Assignment_1
 
         public static string CheckoutAppliance(long input)
         {
-            string output = "test";
+          
             foreach (Appliance x in appliances)
             {
                 if (x.ItemNumber == input)
@@ -24,21 +24,21 @@ namespace Assignment_1
 
                     if (x.Quantity > 0)
                     {
-                        output.Replace("test", "Appliance " + input + " has been checked out.");
+                        return ("test", "Appliance " + input + " has been checked out.");
                     }
 
                     else
                     {
-                        output.Replace("test", "The appliance is not available to be checked out.");
+                        return ("test", "The appliance is not available to be checked out.");
                     }
                 }
 
                 else
                 {
-                    output.Replace("test", "No appliance found with that item number.");
+                    Console.WriteLine("test", "No appliance found with that item number.");
                 }
             }
-            return output;
+            
         }
         public static void AddAppliances()
         {
@@ -132,7 +132,7 @@ namespace Assignment_1
                 {
                     Console.WriteLine("Enter item number of Appliance:");
                     long itemNumber = long.Parse(Console.ReadLine());
-                    Console.WriteLine(CheckoutAppliance(itemNumber));
+                    Console.WriteLine(CheckoutAppliance (itemnumber));
 
                 }
                 else if (input == "2")
