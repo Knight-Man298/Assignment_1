@@ -39,7 +39,7 @@ namespace Assignment_1
             }
             return output;
         }
-        public static string SearchBrandByName(string input)
+        public static void SearchBrandByName(string input)
         { // ONLY PRINTS LAST INSTANCE, NEEDS TO PRINT ALL INSTANCES
             List<Appliance> CalledAppliances = new List <Appliance>();
             string output = "No appliances found with that item number.";
@@ -48,18 +48,21 @@ namespace Assignment_1
                 if (appliance.Brand == input)
                 {
                     CalledAppliances.Add(appliance);
-                    for (int index = 0; index < CalledAppliances.Count; index++)
-                    {
-                        output = $"Matching Appliances: {CalledAppliances.ToString()}";
-                        continue;
-                    }
+                    output = $"Matching Appliances: ";
+                continue;
+                    
                 }
                 else
                 {
                     continue;
                 }
             }
-            return output;
+            Console.WriteLine(output);
+            foreach(Appliance x in CalledAppliances)
+            {
+                Console.WriteLine(x.ToString);
+            }
+                        
         }
 
         public static void AddAppliances()
@@ -182,7 +185,7 @@ namespace Assignment_1
                 {
                     Console.WriteLine("Enter brand to search for:");
                     string brand = Console.ReadLine();
-                    Console.WriteLine(SearchBrandByName(brand));
+                    SearchBrandByName(brand);
                     
                 }
                 else if (input == "3")
