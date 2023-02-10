@@ -41,18 +41,19 @@ namespace Assignment_1
         }
         public static string SearchBrandByName(string input)
         { // ONLY PRINTS LAST INSTANCE, NEEDS TO PRINT ALL INSTANCES
-
-            string output = "";
+            List<Appliance> CalledAppliances = new List <Appliance>();
+            string output = "No appliances found with that item number.";
             foreach (Appliance appliance in appliances)
             {
                 if (appliance.Brand == input)
                 {
-                    output = "No appliances found with that item number.";
-                    output = $"Matching Appliances: {appliance.ToString()}";
+                    CalledAppliances.Add(appliance);
+                    output = $"Matching Appliances: {CalledAppliances.ToString()}";
+                    continue;
                 }
                 else
                 {
-                    output = "No appliances found with that item number.";
+                    continue;
                 }
             }
             return output;
