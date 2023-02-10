@@ -41,6 +41,7 @@ namespace Assignment_1
         }
         public static string SearchBrandByName(string input)
         { // ONLY PRINTS LAST INSTANCE, NEEDS TO PRINT ALL INSTANCES
+
             string output = "";
             foreach (Appliance appliance in appliances)
             {

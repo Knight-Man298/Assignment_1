@@ -44,6 +44,10 @@ namespace Assignment_1
             {
                 return "Moderate";
             }
+            else
+            {
+                return "Not avaliable";
+            }
         }
 
         public override string ToString()
