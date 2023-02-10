@@ -75,7 +75,7 @@ namespace Assignment_1
                 {
                     if (((Fridge)appliance).NumberOfDoors == input)
                     {
-                        Console.WriteLine(appliance.ToString);
+                        Console.WriteLine(appliance.ToString());
                     }
                 }
 
@@ -85,7 +85,7 @@ namespace Assignment_1
         public static void AddAppliances()
         {
 
-            string[] path = File.ReadAllLines("C:\\Users\\msimm\\Desktop\\Semester 2\\OOP2\\Assignments\\Assignment_1\\Assignment_1\\resource\\appliances.txt");
+            string[] path = File.ReadAllLines("/Users/sk/Documents/sem2/OOP2/Assigment/Assigment#1/Assignment_1/Assignment_1/resource/appliances.txt");
             foreach (string appliance in path)
             {
                 string[] position = appliance.Split(";");
@@ -222,8 +222,8 @@ namespace Assignment_1
                         if (type == "1")
                         {
                             Console.WriteLine("Enter number of doors: 2 (double door), 3 (three doors) or 4 (four doors):");
-                            int doors = int.Parse(Console.ReadLine());
-                           
+                            double doors = int.Parse(Console.ReadLine());
+                            DisplayApplianceByType(doors);
                         }
                         else if (type == "2")
                         {
