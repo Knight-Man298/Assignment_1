@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.Metrics;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Assignment_1
@@ -16,29 +18,22 @@ namespace Assignment_1
 
         public static string CheckoutAppliance(long input)
         {
-          
-            foreach (Appliance x in appliances)
+            string test = "test";
+            foreach (Appliance appliance in appliances)
             {
-                if (x.ItemNumber == input)
+
+                if (appliance.ItemNumber == input)
                 {
-
-                    if (x.Quantity > 0)
-                    {
-                        return ("test", "Appliance " + input + " has been checked out.");
-                    }
-
-                    else
-                    {
-                        return ("test", "The appliance is not available to be checked out.");
-                    }
+                    test = "test 1";
+                    return test;
                 }
-
                 else
                 {
-                    Console.WriteLine("test", "No appliance found with that item number.");
+                    test = "test 1";
+                    return test;
                 }
             }
-            
+            return test;
         }
         public static void AddAppliances()
         {
@@ -50,47 +45,48 @@ namespace Assignment_1
                 string identification = position[0];
                 char firstChar = identification[0];
 
-                if (firstChar == '1')
+                switch (firstChar)
                 {
-                    Fridge fridge = new Fridge();
-                    fridge.ItemNumber = long.Parse(position[0]);
-                    fridge.Brand = position[1];
-                    fridge.Quantity = double.Parse(position[2]);
-                    fridge.Wattage = double.Parse(position[3]);
-                    fridge.Color = position[4];
-                    fridge.Price = double.Parse(position[5]);
-                    fridge.NumberOfDoors = double.Parse(position[6]);
-                    fridge.Height = double.Parse(position[7]);
-                    fridge.Width = double.Parse(position[8]);
+                    case '1':
+                        Fridge fridge = new Fridge();
+                        fridge.ItemNumber = long.Parse(position[0]);
+                        fridge.Brand = position[1];
+                        fridge.Quantity = double.Parse(position[2]);
+                        fridge.Wattage = double.Parse(position[3]);
+                        fridge.Color = position[4];
+                        fridge.Price = double.Parse(position[5]);
+                        fridge.NumberOfDoors = double.Parse(position[6]);
+                        fridge.Height = double.Parse(position[7]);
+                        fridge.Width = double.Parse(position[8]);
 
-                    appliances.Add(fridge);
-;                }
-                else if (firstChar == '2')
-                {
-                    Vacumm vacumm = new Vacumm();
-                    vacumm.ItemNumber = long.Parse(position[0]);
-                    vacumm.Brand = position[1];
-                    vacumm.Quantity = double.Parse(position[2]);
-                    vacumm.Wattage = double.Parse(position[3]);
-                    vacumm.Color = position[4];
-                    vacumm.Price = double.Parse(position[5]);
-                    vacumm.Grade = position[6];
-                    vacumm.BatteryVoltage = double.Parse(position[7]);
+                        appliances.Add(fridge);
+                        break;
 
-                    appliances.Add(vacumm);
+                    case '2':
+
+                        Vacumm vacumm = new Vacumm();
+                        vacumm.ItemNumber = long.Parse(position[0]);
+                        vacumm.Brand = position[1];
+                        vacumm.Quantity = double.Parse(position[2]);
+                        vacumm.Wattage = double.Parse(position[3]);
+                        vacumm.Color = position[4];
+                        vacumm.Price = double.Parse(position[5]);
+                        vacumm.Grade = position[6];
+                        vacumm.BatteryVoltage = double.Parse(position[7]);
+
+                        appliances.Add(vacumm);
+                        break;
+
+                    case '3':
+                        Microwave microwave = new Microwave();
+                        microwave.ItemNumber = long.Parse(position[0]);
+                        microwave.Brand = position[1];
+                        microwave.Quantity = double.Parse(position[2]);
+                        microwave.Wattage = double.Parse(position[3]);
+                        microwave.Color = position[4];
+                        microwave.Price = double.Parse(position[5]);
+                        break;
                 }
-                else if (firstChar == '3')
-                {
-                    Microwave microwave= new Microwave();
-                    microwave.ItemNumber= long.Parse(position[0]);
-                    microwave.Brand = position[1];
-                    microwave.Quantity = double.Parse(position[2]);
-                    microwave.Wattage = double.Parse(position[3]);
-                    microwave.Color = position[4];
-                    microwave.Price = double.Parse(position[5]);
-
-                }
-                Console.WriteLine(appliances);
             }
         }
 
@@ -132,7 +128,7 @@ namespace Assignment_1
                 {
                     Console.WriteLine("Enter item number of Appliance:");
                     long itemNumber = long.Parse(Console.ReadLine());
-                    Console.WriteLine(CheckoutAppliance (itemnumber));
+                    Console.WriteLine(CheckoutAppliance (itemNumber));
 
                 }
                 else if (input == "2")
