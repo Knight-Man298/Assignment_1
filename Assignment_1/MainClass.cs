@@ -52,7 +52,7 @@ namespace Assignment_1
             string[] path = File.ReadAllLines("C:\\Users\\msimm\\Desktop\\Semester 2\\OOP2\\Assignments\\Assignment_1\\Assignment_1\\resource\\appliances.txt");
             foreach (string appliance in path)
             {
-                string[] position = appliance.Split(":");
+                string[] position = appliance.Split(";");
                 string identification = position[0];
                 char firstChar = identification[0];
 
