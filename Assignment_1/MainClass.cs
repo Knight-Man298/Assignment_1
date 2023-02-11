@@ -74,10 +74,11 @@ namespace Assignment_1
                 if (appliance is Fridge)
                 {
                     string numberDoor = Convert.ToString(((Fridge)appliance).NumberOfDoors);
-                    if (numberDoor == input) 
+                    if (numberDoor == input)
                     {
                         Console.WriteLine(appliance.ToString());
                     }
+                  
                 else if(appliance is Vacumm)
                     {
                         string volts = Convert.ToString(((Vacumm)appliance).BatteryVoltage);
@@ -86,7 +87,10 @@ namespace Assignment_1
                             Console.WriteLine(appliance.ToString());
                         }
                     }
-                    
+                    else
+                    {
+                        continue;
+                    }   
                 }
 
             }
@@ -232,24 +236,86 @@ namespace Assignment_1
                         if (type == "1")
                         {
                             Console.WriteLine("Enter number of doors: 2 (double door), 3 (three doors) or 4 (four doors):");
-                            string  doors = (Console.ReadLine());
-                            DisplayApplianceByType(doors);
+                            string doors = (Console.ReadLine());
+                            foreach (Appliance appliance in appliances)
+                            {
+                                if (appliance is Fridge)
+                                {
+                                    string numberDoor = Convert.ToString(((Fridge)appliance).NumberOfDoors);
+                                    if (numberDoor == input)
+                                    {
+                                        Console.WriteLine(appliance.ToString());
+                                    }
+                                    else
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
                         }
                         else if (type == "2")
                         {
                             Console.WriteLine("Enter battery voltage value. 18 V (low) or 24 V (high)");
                             string volts = (Console.ReadLine());
-                            DisplayApplianceByType(volts);
+                            //DisplayApplianceByType(v);
+                            foreach (Appliance appliance in appliances)
+                            {
+                                if (appliance is Vacumm)
+                                {
+                                    string volt = Convert.ToString(((Vacumm)appliance).BatteryVoltage);
+                                    if (volts == volt)
+                                    {
+                                        Console.WriteLine(appliance.ToString());
+                                    }
+                                }
+                                else
+                                {
+                                    continue;
+                                }
 
+                            }
                         }
                         else if (type == "3")
                         {
+                            Console.WriteLine("Room where the mircowave will be installed: K (kitchen) or W (work site)");
+                            string locationinput = (Console.ReadLine());
+                            foreach (Appliance appliance in appliances)
+                            {
+                                if (appliance is Microwave)
+                                {
+                                    string location = ((Microwave)appliance).RoomType;
+                                    if (locationinput == location)
+                                    {
+                                        Console.WriteLine(appliance.ToString());
+                                    }
+                                }
+                                else
+                                {
+                                    continue;
+                                }
 
+                            }
                         }
                         else if (type == "4")
                         {
-
-                        }
+                            Console.WriteLine("Enter the sound rating of the dishwasher: Qt (Quietest), Qr (Quieter), Qu (Quiet) or M (Moderate)");
+                            string locationinput = (Console.ReadLine());
+                            foreach (Appliance appliance in appliances)
+                            {
+                                if (appliance is Dishwasher)
+                                {
+                                    string location = ((Dishwasher)appliance).Soundrating;
+                                    if (locationinput == location)
+                                    {
+                                        Console.WriteLine(appliance.ToString());
+                                    }
+                                }
+                                else
+                                {
+                                    continue;
+                                }
+                            }
+                            }
                         else
                         {
                             break;

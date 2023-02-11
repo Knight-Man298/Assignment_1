@@ -28,15 +28,15 @@ namespace Assignment_1
 
         public string getSoundRating(string inputSoundRating)
         {
-            if( inputSoundRating == "QT")
+            if( inputSoundRating == "Qt")
             {
                 return "Quietest";
             }
-            else if ( inputSoundRating == "QR")
+            else if ( inputSoundRating == "Qr")
             {
                 return "Quieter";
             }
-            else if (inputSoundRating == "QU")
+            else if (inputSoundRating == "Qu")
             {
                 return "Quiet";
             }
