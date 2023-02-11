@@ -66,17 +66,27 @@ namespace Assignment_1
             }
                         
         }
-        public static void DisplayApplianceByType(double input)
+        public static void DisplayApplianceByType(string input)
         {
             string output = "";
             foreach(Appliance appliance in appliances)
             {
                 if (appliance is Fridge)
                 {
-                    if (((Fridge)appliance).NumberOfDoors == input)
+                    string numberDoor = Convert.ToString(((Fridge)appliance).NumberOfDoors);
+                    if (numberDoor == input) 
                     {
                         Console.WriteLine(appliance.ToString());
                     }
+                else if(appliance is Vacumm)
+                    {
+                        string volts = Convert.ToString(((Vacumm)appliance).BatteryVoltage);
+                        if (volts == input)
+                        {
+                            Console.WriteLine(appliance.ToString());
+                        }
+                    }
+                    
                 }
 
             }
@@ -222,11 +232,14 @@ namespace Assignment_1
                         if (type == "1")
                         {
                             Console.WriteLine("Enter number of doors: 2 (double door), 3 (three doors) or 4 (four doors):");
-                            double doors = int.Parse(Console.ReadLine());
+                            string  doors = (Console.ReadLine());
                             DisplayApplianceByType(doors);
                         }
                         else if (type == "2")
                         {
+                            Console.WriteLine("Enter battery voltage value. 18 V (low) or 24 V (high)");
+                            string volts = (Console.ReadLine());
+                            DisplayApplianceByType(volts);
 
                         }
                         else if (type == "3")
