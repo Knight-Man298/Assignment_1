@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static System.Math;
+using System.Security.Cryptography;
 
 namespace Assignment_1
 {
@@ -25,23 +26,23 @@ namespace Assignment_1
                 
                 if (appliance.ItemNumber == input)
                 {
-                    output = $"Appliance {input} has been checked out. \n";
+                    output = $"\nAppliance {input} has been checked out. \n";
                     return output;
                 }
                 else if (appliance.Quantity == 0)
                 {
-                    output = "The appliance is not available to be checked out. \n";
+                    output = "\nThe appliance is not available to be checked out. \n";
                 }
                 else
                 {
-                    output = "No appliances found with that item number. \n";
+                    output = "\nNo appliances found with that item number.\n";
                     return output;
                 }
             }
             return output;
         }
         public static void SearchBrandByName(string input)
-        { // ONLY PRINTS LAST INSTANCE, NEEDS TO PRINT ALL INSTANCES
+        { 
             List<Appliance> CalledAppliances = new List <Appliance>();
             string output = "";
             foreach (Appliance appliance in appliances)
@@ -49,13 +50,13 @@ namespace Assignment_1
                 if (appliance.Brand == input)
                 {
                     CalledAppliances.Add(appliance);
-                    output = $"Matching Appliances: \n";
+                    output = $"\nMatching Appliances: \n";
                 continue;
                     
                 }
                 else
                 {
-                    output = "No appliances found with that item number. \n";
+                    output = "\nNo appliances found with that item number.\n";
                     continue;
                 }
             }
@@ -99,7 +100,8 @@ namespace Assignment_1
         public static void AddAppliances()
         {
 
-            string[] path = File.ReadAllLines("/Users/sk/Documents/sem2/OOP2/Assigment/Assigment#1/Assignment_1/Assignment_1/resource/appliances.txt");
+            // string[] path = File.ReadAllLines("/Users/sk/Documents/sem2/OOP2/Assigment/Assigment#1/Assignment_1/Assignment_1/resource/appliances.txt");
+            string[] path = File.ReadAllLines("C:\\Users\\msimm\\Desktop\\Semester 2\\OOP2\\Assignments\\Assignment_1\\Assignment_1\\resource\\appliances.txt");
             foreach (string appliance in path)
             {
                 string[] position = appliance.Split(";");
@@ -272,7 +274,6 @@ namespace Assignment_1
                                 {
                                     continue;
                                 }
-
                             }
                         }
                         else if (type == "3")
@@ -284,7 +285,7 @@ namespace Assignment_1
                                 if (appliance is Microwave)
                                 {
                                     string location = ((Microwave)appliance).RoomType;
-                                    if (locationinput == location)
+                                    if (locationinput.ToUpper() == location)
                                     {
                                         Console.WriteLine(appliance.ToString());
                                     }
@@ -293,7 +294,6 @@ namespace Assignment_1
                                 {
                                     continue;
                                 }
-
                             }
                         }
                         else if (type == "4")
@@ -315,7 +315,7 @@ namespace Assignment_1
                                     continue;
                                 }
                             }
-                            }
+                        }
                         else
                         {
                             break;
@@ -327,14 +327,29 @@ namespace Assignment_1
                 {
                     Console.WriteLine("Enter number of appliances:");
                     int numberOfAppliances = int.Parse(Console.ReadLine());
-
-           
+                    RandomList(numberOfAppliances);
                 }
                 else
                 {
                     break;
                 }
  
+            }
+            
+        }
+        public static void RandomList(int input)
+        {
+            Random random = new Random();
+            List<Appliance> list = new List<Appliance>();
+            for (int index = 0; index < input; index++)
+            {
+                int randomIndex = random.Next(1, appliances.Count);
+
+                list.Add(appliances[randomIndex]);
+            }
+            foreach (Appliance appliance in list)
+            {
+                Console.WriteLine(appliance.ToString());
             }
         }
     }
