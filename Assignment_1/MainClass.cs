@@ -23,21 +23,25 @@ namespace Assignment_1
             string output = "";
             foreach (Appliance appliance in appliances)
             {
-                
                 if (appliance.ItemNumber == input)
                 {
-                    output = $"\nAppliance {input} has been checked out. \n";
-                    return output;
-                }
-                else if (appliance.Quantity == 0)
-                {
-                    output = "\nThe appliance is not available to be checked out. \n";
+                    if (appliance.Quantity != 0)
+                    {
+                        output = $"\nAppliance {input} has been checked out. \n";
+                        
+                    }
+                    else
+                    {
+                        output = "\nThe appliance is not available to be checked out. \n";
+                    }
+                    break;
                 }
                 else
                 {
                     output = "\nNo appliances found with that item number.\n";
-                    return output;
+                    
                 }
+                
             }
             return output;
         }
@@ -172,28 +176,12 @@ namespace Assignment_1
            
         }
 
-        public static int Doors(int input)
-        {
-            if (input == 2)
-            {
-
-            }
-            else if (input == 3) {
-                
-            }
-            else if (input == 4)
-            {
-
-            }
-            return 0;
-        }
-
         public static void Main()
         {
             AddAppliances();
             while (true)
             {
-                Console.WriteLine("Welcome to Modern Appliances!");
+                Console.WriteLine("\nWelcome to Modern Appliances!");
                 Console.WriteLine("""
                     How may we assist you?
                     1 – Check out appliance
@@ -216,7 +204,7 @@ namespace Assignment_1
                 }
                 else if (input == "2")
                 {
-                    Console.WriteLine("Enter brand to search for:");
+                    Console.WriteLine("\nEnter brand to search for:\n");
                     string brand = Console.ReadLine();
                     SearchBrandByName(brand);
                     
@@ -225,6 +213,7 @@ namespace Assignment_1
                 {
                     while (true) {
                         Console.WriteLine("""
+
                             Appliance Types
                             1 – Refrigerators
                             2 – Vacuums
@@ -237,7 +226,7 @@ namespace Assignment_1
 
                         if (type == "1")
                         {
-                            Console.WriteLine("Enter number of doors: 2 (double door), 3 (three doors) or 4 (four doors):");
+                            Console.WriteLine("\nEnter number of doors: 2 (double door), 3 (three doors) or 4 (four doors):\n");
                             string doors = (Console.ReadLine());
                             foreach (Appliance appliance in appliances)
                             {
@@ -257,9 +246,8 @@ namespace Assignment_1
                         }
                         else if (type == "2")
                         {
-                            Console.WriteLine("Enter battery voltage value. 18 V (low) or 24 V (high)");
+                            Console.WriteLine("\nEnter battery voltage value. 18 V (low) or 24 V (high)\n");
                             string volts = (Console.ReadLine());
-                            //DisplayApplianceByType(v);
                             foreach (Appliance appliance in appliances)
                             {
                                 if (appliance is Vacumm)
@@ -278,7 +266,7 @@ namespace Assignment_1
                         }
                         else if (type == "3")
                         {
-                            Console.WriteLine("Room where the mircowave will be installed: K (kitchen) or W (work site)");
+                            Console.WriteLine("\nRoom where the mircowave will be installed: K (kitchen) or W (work site)\n");
                             string locationinput = (Console.ReadLine());
                             foreach (Appliance appliance in appliances)
                             {
@@ -298,7 +286,7 @@ namespace Assignment_1
                         }
                         else if (type == "4")
                         {
-                            Console.WriteLine("Enter the sound rating of the dishwasher: Qt (Quietest), Qr (Quieter), Qu (Quiet) or M (Moderate)");
+                            Console.WriteLine("\nEnter the sound rating of the dishwasher: Qt (Quietest), Qr (Quieter), Qu (Quiet) or M (Moderate)\n");
                             string locationinput = (Console.ReadLine());
                             foreach (Appliance appliance in appliances)
                             {
@@ -320,12 +308,13 @@ namespace Assignment_1
                         {
                             break;
                         }
+                        break;
                     }
 
                 }
                 else if (input == "4")
                 {
-                    Console.WriteLine("Enter number of appliances:");
+                    Console.WriteLine("\nEnter number of appliances:\n");
                     int numberOfAppliances = int.Parse(Console.ReadLine());
                     RandomList(numberOfAppliances);
                 }
@@ -353,4 +342,4 @@ namespace Assignment_1
             }
         }
     }
-}
+} // Complete
